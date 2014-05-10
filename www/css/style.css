@@ -1,0 +1,74 @@
+.ui-page.ui-body-c {
+    background: url(../img/superfoods.jpg);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;  
+}
+
+.ui-grid-c img {
+	padding-top: 5px;
+	padding-bottom : 5px;
+    padding-left : 5px;
+    padding-right : 5px;
+    width: 95%;
+    height : auto;
+}
+
+.orderButton {
+	width: 90%;
+    padding-top: 5px;
+	padding-bottom : 5px;
+    padding-left : 5px;
+    padding-right : 5px;
+}
+
+#submitButton {
+	margin-top: 5px;
+	width: 100%;
+}
+
+#payButton {
+    margin-top: 5px;
+    width: 100%;
+    background-color: green;
+}
+
+#loginButton {
+    margin-top: 5px;
+    width: 100%;
+}
+
+
+.productName {
+	text-align: center;
+	font-size: medium;
+	font-weight: 600;
+}
+
+.qty {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+}
+
+#menuTotalPrice{
+    float:right;
+}
+
+orderStatus {
+    font-style:italic;
+    font-size: small;
+}
+
+orderPrice {
+    float:right;
+    font-size: small;
+}
+
+input .qtyplus { 
+	width:25px; height:25px;
+}
+
+input .qtyminus { 
+	width:25px; height:25px;
+}

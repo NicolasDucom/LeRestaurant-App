@@ -1,0 +1,253 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>Le Restaurant</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<style type="text/css">
+		/* Prevent copy paste for all elements except text fields */
+		*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+		input, textarea  { -webkit-user-select:text; }
+		body { background-color:white; color:black }
+	</style>
+	<script src='intelxdk.js'></script>
+	<script type="text/javascript">
+		/* This code is used to run as soon as Intel activates */
+		var onDeviceReady=function(){
+		//hide splash screen
+		intel.xdk.device.hideSplashScreen();
+		};
+		document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
+	</script>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+   <div data-role="page" id="page1">
+  <div data-role="header">
+    <h1>Menu</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <div data-role="tabs">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#fragment-1">Plats Principaux</a></li>
+          <li><a href="#fragment-2">Desserts</a></li>
+          <li><a href="#fragment-3">Boissons</a></li>
+        </ul>
+      </div>
+      <div id="fragment-1">
+        <fieldset class="ui-grid-c">
+          <div class="ui-block-a">
+            <img src="img/steak-frites.jpg" alt="">
+            <div class="productName">
+              Steak Frites
+              <div class="productPrice">
+                8.50 €
+              </div>
+            </div>
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="20">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-b">
+            <img src="img/lasagnes.jpg" alt="">
+            <div class="productName">
+              Lasagnes
+              <div class="productPrice">
+                8.00 €
+              </div>
+            </div> 
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-btn-a orderButton" data-transition="pop" data-id="21">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-c">
+            <img src="img/salade-ceasar.jpg" alt=""> 
+            <div class="productName">
+              Salade Cesar
+              <div class="productPrice">
+                7.50 €
+              </div> 
+            </div> 
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="22">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-d" >
+            <img src="img/bolognaise.jpg" alt="">
+            <div class="productName"> 
+              Bolognaises
+              <div class="productPrice">
+                8.50 €
+              </div> 
+            </div> 
+            <br> 
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="23">
+              Commander
+            </a>
+          </div>
+        </fieldset>
+      </div>
+      <div id="fragment-2">
+        <fieldset class="ui-grid-c">
+          <div class="ui-block-a">
+            <img src="img/gaufre-liegeoise.jpg" alt="">
+            <div class="productName">
+              Gaufre Liegeoise
+              <div class="productPrice">
+                3.50 €
+              </div>
+            </div>
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="18">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-b">
+            <img src="img/gateau-chocolat.jpg" alt=""> 
+            <div class="productName">
+              Gateau au Chocolat
+              <div class="productPrice">
+                4.00 €
+              </div>
+            </div> 
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="17">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-c">
+            <img src="img/sorbet-ananas.jpg" alt=""> 
+            <div class="productName">
+              Sorbet Ananas
+              <div class="productPrice">
+                3.50 €
+              </div>
+            </div>
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="16">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-d">
+            <img src="img/creme-brulee.jpg" alt="">
+            <div class="productName">
+              Creme Brulee
+              <div class="productPrice">
+                3.00 €
+              </div>
+            </div>
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="19">
+              Commander
+            </a>
+          </div>
+        </fieldset>
+      </div>
+      <div id="fragment-3">
+        <fieldset class="ui-grid-c">
+          <div class="ui-block-a">
+              <img src="img/coca.jpg" alt="">
+              <div class="productName">
+                Coca-Cola
+                <div class="productPrice">
+                  2.50 €
+                </div>
+              </div>
+              <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="7">
+              Commander
+            </a>
+              <img src="img/coca.jpg" alt="">
+              <div class="productName">
+                Coca-Cola Zero
+                <div class="productPrice">
+                 2.50 €
+                </div>
+              </div>
+              <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="4">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-b">
+            <img src="img/vin.jpg" alt="">
+            <div class="productName">
+              Verre de Vin
+              <div class="productPrice">
+                3.00 €
+              </div>
+            </div>
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="14">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-c">
+            <img src="img/biere.jpg" alt="">
+            <div class="productName">
+              Verre de Biere
+              <div class="productPrice">
+                3.00 €
+              </div>
+            </div>
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="15">
+              Commander
+            </a>
+          </div>
+          <div class="ui-block-d">
+            <img src="img/evian.jpg" alt="">
+            <div class="productName">
+              Evian 1L
+              <div class="productPrice">
+                3.50 €
+              </div>
+            </div>
+            <br>
+            <a href="#popupNbr" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a orderButton" data-transition="pop" data-id="6">
+              Commander
+            </a>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed"> 
+  <h4>&#8592; Voir la note </h4> 
+</div> 
+  <div data-role="popup" id="popupNbr" data-theme="a" class="ui-corner-all">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+    <div style="padding:10px 20px;">
+     <label for="slider-8">Nombre:</label>
+      <input type='button' value='+' class='qtyplus' field='quantity' />
+      <input type='text' name='quantity' id='orderQty' value='1' class='qty' />
+      <input type='button' value='-' class='qtyminus' field='quantity' />
+      <a data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-transition="pop" id="confirmOrderButton" style="width:80%;">Confirmer</a>
+    </div>
+  </div>
+  <div data-role="popup" id="popupPay" data-theme="a" class="ui-corner-all">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+    <div style="padding:10px 20px;">
+      <a data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-transition="pop" id="confirmPayButton" style="width:80%;">Confirmer</a>
+      <a data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-transition="pop" id="cancelPayButton" style="width:80%;">Annuler</a>
+    </div>
+  </div>
+  <div data-role="panel" id="right-panel" data-display="overlay" data-position="right" data-theme="b" style="width:20em;">
+    <div id="panelHeader">Ticket de caisse<br><hr></div>
+    <div id="menuContent"></div>
+    <hr>
+    <div id="menuTotalPrice"></div>
+    <a href="#popupNbr" data-rel="popup" data-position-to="window" data-transition="pop"></a><button id="payButton" class="ui-btn">Payer</button></a>
+    <!--<a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-right">Close</a> -->
+  </div><!-- /panel -->
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
