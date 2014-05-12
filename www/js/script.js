@@ -1,6 +1,7 @@
 var orderedElemId = null;
 var currentOrder = null;
 $.ajaxSetup({ cache: false });
+jQuery.support.cors = true;
 
 function getCookie(cname)
 {
@@ -55,19 +56,25 @@ $(document).on('click',"#payButton",function(){
      $("#popupPay").popup( "open" );
 });
 
-$(document).on('click',"#confirmPayButton",function(){
+$(document).on('click',"#confirmPayButton",function(e){
     $.ajax({
-        type: 'PUT',
-        url: 'http://lerestaurant.flst.fr/app/api/commandes/',
+        type: 'POST',
+        url: 'http://lerestaurant.flst.fr/app/api/commandes/update',
+        crossDomain: true,
         data: { 
             idCommande: getCookie('idCommande'),
-            etat: 'PAIEMENT EN ATTENTE',
+            etat: 'PAIEMENT EN ATTENTE'
         },
         success: function(data) {
-            window.location.replace('finish.html');   
+           window.location.replace('finish.html');   
         },
-        error: function() {
-        }
+      /*  error: function() {
+            alert('Erreur lors de la confirmation de ticket de caisse');
+        }*/
+    error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      }
     });
 });
 
@@ -117,8 +124,12 @@ $(document).on('click',"#confirmOrderButton",function(){
 });
 
 $("#submitButton").on("click",function( event ) {
-    document.cookie = "idTable" + "=" +$("#tableNb").val()+"; ";
-    window.location.replace('login.html');
+        if ($("#tableNb").val() != "") {
+        document.cookie = "idTable" + "=" +$("#tableNb").val()+"; ";
+            window.location.replace('login.html');
+    } else {
+        alert("Merci de saisir un numéro de table valide.");
+    }
 });
 
 $(document).on("click","#loginButton",function( event ) {
@@ -127,7 +138,9 @@ $(document).on("click","#loginButton",function( event ) {
     $.ajax({
         type: 'POST',
         url: 'http://lerestaurant.flst.fr/app/api/clients/check',
-        data: { email: mailClient },
+        data: { email: mailClient,
+              motDePasse: $('#motDePasseClient').val() 
+              },
         success: function(data) {
             var cli = data; 
             document.cookie = "idClient" + "=" +cli.id+"; ";
@@ -150,7 +163,7 @@ $(document).on("click","#loginButton",function( event ) {
             });          
         },
         error: function() {
-            alert('Cet Email n\'existe pas');  
+            alert('Identifiants de connexion non reconnus.');  
         }
     }); 
 });   

@@ -4,11 +4,13 @@
 	<title>Le Restaurant</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
-	<style type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+	<style type="text/css">      
 		/* Prevent copy paste for all elements except text fields */
 		*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
 		input, textarea  { -webkit-user-select:text; }
 		body { background-color:white; color:black }
+        h2 { margin-top: 10px; font-family: 'Damion', cursive; text-align: center; font-size: 42px; }
 	</style>
 	<script src='intelxdk.js'></script>
 	<script type="text/javascript">
@@ -25,14 +27,17 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div data-role="header" data-theme="c"><h1>Saisir Mail Client</h1></div>
+     <div data-role="header" data-theme="c"><h1>Connexion</h1></div>
     <div data-role="content" data-theme="c" >
     <div class="ui-body ui-body-c ui-corner-all">
+    	<h2>Le Restaurant</h2>
         <div class="ui-field-contain">
-            <label for="Mail">Mail</label>
-            <input type="text" name="client" id="mailClient" value="">
-            <button id="loginButton" class="ui-btn">Valider</button>
+            <label for="Mail">Adresse e-mail :</label>
+            <input type="text" name="client" id="mailClient"><br><br><br>
+            <label for="motDePasse">Mot de passe :</label>
+            <input type="password" name="motDePasse" id="motDePasseClient">
         </div>
+        <button id="loginButton" class="ui-btn">Valider</button>
     </div>
     </div>
     <script src="js/script.js"></script>
